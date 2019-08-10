@@ -9,17 +9,17 @@ pilha2 = []
 
 x = 0
 while (x < 15):
-    y = int(input('Digite: '))
+    y = int(input('Digite um número: '))
     pilha1.append(y)
     if ((y % 2) != 0):
         pilha2.append(y)
     else:
         if (len(pilha2) == 0):
             print('A Pilha está vazia, digite um número Impar: ')
-            y = int(input('Digite: '))
+            y = int(input('Digite um número: '))
         else:
             pilha2.pop()
     x += 1
 
-print('Pilha Par: ',pilha1)
-print('Pilha Impar: ',pilha2)
+print('Pilha completa: ', pilha1)
+print('Pilha Impar: ', pilha2)

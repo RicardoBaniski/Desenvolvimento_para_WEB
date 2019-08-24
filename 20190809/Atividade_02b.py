@@ -15,21 +15,21 @@ def adicionar():
     avioes.append(a)
 
 
-def lista_espera():
+def listaEspera():
     if(len(avioes) == 0):
         print('\nNão há fila de espera')
     else:
         print('\nLista de espera: ', avioes)
 
 
-def quantidade_espera():
+def qtdeEspera():
     if (len(avioes) == 0):
         print('\nNão há fila de espera')
     else:
         print('\nAviões em espera: ', len(avioes))
 
 
-def decolagem():
+def autorizar():
     if (len(avioes) == 0):
         print('\nNão há fila de espera')
     else:
@@ -49,13 +49,13 @@ def menu():
 def opc():
     x = int(input('Opção: '))
     if(x == 1):
-        quantidade_espera()
+        qtdeEspera()
     elif (x == 2):
-        decolagem()
+        autorizar()
     elif (x == 3):
         adicionar()
     elif (x == 4):
-        lista_espera()
+        listaEspera()
     menu()
 
 

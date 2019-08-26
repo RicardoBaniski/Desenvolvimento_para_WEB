@@ -33,6 +33,7 @@ def autorizar():
     if (len(avioes) == 0):
         print('\nNão há fila de espera')
     else:
+        print('\nVôo %s autorizado' % (avioes[0]))
         avioes.pop(0)
 
 

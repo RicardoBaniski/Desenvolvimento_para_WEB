@@ -6,8 +6,6 @@
     d) Listar todos os aviões na fila de espera.'''
 
 avioes = []
-x = 0
-a = 0
 
 
 def adicionar():

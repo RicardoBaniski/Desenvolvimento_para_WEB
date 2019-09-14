@@ -24,6 +24,8 @@ X_test = X[int(percentage*n_samples):]
 Y_training = Y[:int(percentage*n_samples)]
 X_training = X[:int(percentage*n_samples)]
 
+print('\n*** MÉTODO SVM ***')
+
 clf = svm.SVC(C=1.0, kernel='poly', gamma='scale',
               decision_function_shape='ovr')
 clf.fit(X_training, Y_training)

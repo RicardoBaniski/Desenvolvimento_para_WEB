@@ -27,6 +27,8 @@ X_training = X[:int(percentage*n_samples)]
 clf = KNeighborsClassifier(n_neighbors=15, algorithm='brute', metric='cosine')
 clf.fit(X_training, Y_training)
 
+print('\n*** MÉTODO KNN ***')
+
 predict_ = clf.predict(X_test)
 print('\nBase:')
 print(predict_)

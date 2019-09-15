@@ -24,7 +24,8 @@ X_test = X[int(percentage*n_samples):]
 Y_training = Y[:int(percentage*n_samples)]
 X_training = X[:int(percentage*n_samples)]
 
-clf = KNeighborsClassifier(n_neighbors=15, algorithm='brute', metric='cosine')
+clf = KNeighborsClassifier(
+    n_neighbors=10, algorithm='brute', metric='euclidean')
 clf.fit(X_training, Y_training)
 
 print('\n*** MÉTODO KNN ***')
@@ -34,7 +35,7 @@ print('\nBase:')
 print(predict_)
 
 accuracy = clf.score(X_test, Y_test)
-print('\nAccuracy:',accuracy,'%')
+print('\nAccuracy:', accuracy*100, '%')
 
 array = metrics.confusion_matrix(Y_test, predict_)
 print('\nArray:')
@@ -42,4 +43,4 @@ for item in array:
     print(item)
 
 end = time.time()
-print('\nRun time:',end - benning,'ms\n')
+print('\nRun time:', end - benning, 'ms\n')

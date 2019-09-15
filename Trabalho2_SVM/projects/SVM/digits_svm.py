@@ -26,8 +26,8 @@ X_training = X[:int(percentage*n_samples)]
 
 print('\n*** MÉTODO SVM ***')
 
-clf = svm.SVC(C=1.0, kernel='poly', gamma='scale',
-              decision_function_shape='ovr')
+clf = svm.SVC(C=1.5, kernel='poly', degree=3,
+              gamma='auto_deprecated', decision_function_shape='ovr')
 clf.fit(X_training, Y_training)
 print('\nSupport Vectors:')
 print(clf.support_vectors_)
@@ -45,4 +45,4 @@ for item in array:
     print(item)
 
 end = time.time()
-print('\nRun time: ', benning-end,'ms\n')
+print('\nRun time: ', end-benning, 'ms\n')

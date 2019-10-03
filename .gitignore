@@ -123,3 +123,6 @@ dmypy.json
 .pyre/
 
 .vscode\
+*.docx
+*.pdf
+Trabalho2_SVM/Trabalho_II_SVM.zip

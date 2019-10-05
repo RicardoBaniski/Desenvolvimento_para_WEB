@@ -27,8 +27,7 @@ X_training = X[:int(percentage*n_samples)]
 
 print('\n*** MÉTODO PERCEPTRON ***')
 
-# var_smoothing : float, optional (default=1e-9)
-clf = Perceptron(penalty=None, alpha=0.0001, max_iter=1)
+clf = Perceptron(penalty=None, alpha=0.0001, max_iter=1000)
 clf.fit(X_training, Y_training)
 predict_ = clf.predict(X_test)
 print('\nBase:')

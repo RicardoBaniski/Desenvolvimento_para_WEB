@@ -4,7 +4,7 @@ import time
 
 benning = time.time()
 
-db = datasets.load_iris()
+db = datasets.load_digits()
 
 X = db.data  # atributos
 Y = db.target  # classe
@@ -25,14 +25,15 @@ Y_treino = Y[:int(n_samples*particao)]
 X_teste = X[int(n_samples*particao):]
 Y_teste = Y[int(n_samples*particao):]
 
-clf = neural_network.MLPClassifier(max_iter=1500, hidden_layer_sizes=(10, 6))
+clf = neural_network.MLPClassifier(
+    hidden_layer_sizes=(150,), alpha=0.001, n_iter_no_change=3)
 
 clf.fit(X_treino, Y_treino)
 predicao = clf.predict(X_teste)
 
-print('\nBase:', predicao)
-
 print('\nAccuracy:', (clf.score(X_teste, Y_teste))*100, '%')
+
+print('\nBase:', predicao)
 
 matriz = metrics.confusion_matrix(Y_teste, predicao)
 
@@ -41,14 +42,12 @@ for linha in matriz:
     print(linha)
 
 # pesos
-print('\nPesos: ')
-print(clf.coefs_)
+#print('\nPesos: ')
+# print(clf.coefs_)
 # perda de informação
 print('\nPerda de Informação:')
 print(clf.loss_)
-#
-print('\nteste3')
-print(clf.intercepts_)
+# print(clf.intercepts_)
 
 end = time.time()
 print('\nRun time: ', end-benning, 'ms\n')
